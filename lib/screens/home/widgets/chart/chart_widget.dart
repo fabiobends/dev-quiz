@@ -21,7 +21,7 @@ class ChartWidget extends StatelessWidget {
           ),
         ),
         Center(
-          child: Text("75", style: AppTextStyles.heading),
+          child: Text("75%", style: AppTextStyles.heading),
         ),
       ],
     );
