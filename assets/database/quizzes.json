@@ -13,6 +13,15 @@
           { "title": "Muito bom" },
           { "title": "Show", "isRight": true }
         ]
+      },
+      {
+        "title": "Está curtindo o Flutter",
+        "answers": [
+          { "title": "Estou curtindo" },
+          { "title": "Estou adorando" },
+          { "title": "Muito bom" },
+          { "title": "Show", "isRight": true }
+        ]
       }
     ]
   }

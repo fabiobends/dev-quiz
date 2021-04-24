@@ -1,4 +1,5 @@
 import 'package:DevQuiz/core/app_colors.dart';
+import 'package:DevQuiz/screens/challenge/challenge_screen.dart';
 import 'package:DevQuiz/screens/home/home_controller.dart';
 import 'package:DevQuiz/screens/home/widgets/appbar/app_bar.dart';
 import 'package:DevQuiz/screens/home/widgets/quiz_card/quiz_card_widget.dart';
@@ -70,6 +71,15 @@ class _HomeScreenState extends State<HomeScreen> {
                               '${el.questionsAnswered}/${el.questions.length}',
                           percentage:
                               el.questionsAnswered / el.questions.length,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    ChallengeScreen(questions: el.questions),
+                              ),
+                            );
+                          },
                         ),
                       )
                       .toList(),
