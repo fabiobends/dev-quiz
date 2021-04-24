@@ -1,5 +1,6 @@
 import 'package:DevQuiz/screens/challenge/widgets/question_indicator/question_indicator_widget.dart';
 import 'package:DevQuiz/screens/challenge/widgets/quiz/quiz_widget.dart';
+import 'package:DevQuiz/screens/result/result_screen.dart';
 import 'package:DevQuiz/shared/models/question_model.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,12 @@ import 'widgets/next_button/next_button_widget.dart';
 
 class ChallengeScreen extends StatefulWidget {
   final List<QuestionModel> questions;
-  ChallengeScreen({Key? key, required this.questions}) : super(key: key);
+  final String title;
+  ChallengeScreen({
+    Key? key,
+    required this.questions,
+    required this.title,
+  }) : super(key: key);
 
   @override
   _ChallengeScreenState createState() => _ChallengeScreenState();
@@ -31,6 +37,13 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
       screenController.nextPage(
           duration: Duration(milliseconds: 100), curve: Curves.linear);
     }
+  }
+
+  void onSelected(bool value) {
+    if (value) {
+      controller.qtdAnswerRight++;
+    }
+    nextScreen();
   }
 
   @override
@@ -62,7 +75,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
               .map(
                 (el) => QuizWidget(
                   question: el,
-                  onChange: nextScreen,
+                  onSelected: onSelected,
                 ),
               )
               .toList(),
@@ -87,7 +100,17 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
                     Expanded(
                       child: NextButtonWidget.green(
                         label: "Confirmar",
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ResultScreen(
+                                  title: widget.title,
+                                  length: widget.questions.length,
+                                  result: controller.qtdAnswerRight),
+                            ),
+                          );
+                        },
                       ),
                     ),
                 ],
