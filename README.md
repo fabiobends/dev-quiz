@@ -1,16 +1,25 @@
-# dev_quiz
+# NLW 5 - DevQuiz
 
-A new Flutter project.
+## :thinking: What is that about
 
-## Getting Started
+This is a free event from Rocketseat, where I boosted up my Flutter skills.
 
-This project is a starting point for a Flutter application.
+## 💻 Technologies
 
-A few resources to get you started if this is your first Flutter project:
+This repo is based in:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [Flutter](https://flutter.dev)
+- [Dart](https://dart.dev)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🧠 What I learned
+
+- Styling components.
+- Organizing files.
+- MVC structure with Flutter.
+- Managing state with ValueNotifier.
+- Working with JSON data.
+- Animating widgets.
+
+Consider hiring me as Full Stack Developer :man_technologist:!
+
+Made with :heart:
